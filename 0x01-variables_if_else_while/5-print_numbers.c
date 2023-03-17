@@ -14,8 +14,3 @@ for (i = 0; i < 10; i++)
 printf("\n");
 return (0);
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-
