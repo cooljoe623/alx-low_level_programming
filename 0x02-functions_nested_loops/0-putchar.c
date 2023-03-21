@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 /**
  * main - function to execute the block of code
  *
