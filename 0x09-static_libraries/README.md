@@ -1,1 +1,1 @@
-static libraries practice
+done static creating
