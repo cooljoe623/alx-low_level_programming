@@ -8,6 +8,9 @@
  * where separator = string - print between numbers
  * if separator = null - dont print it
  * shd print a new line at the end of function
+ * print_numbers - prints all numbers with a separator
+ * @separator: separe numbers
+ * @n: int, number of undefined arguments
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
