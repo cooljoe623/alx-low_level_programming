@@ -1,51 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "lists.h"
 
 /**
- * print_listint - Print elements of a singly linked list.
- * @h: Pointer to a list.
- * Return: Integer.
- **/
-
-
-typedef struct node {
-    char* str;
-    struct node* next;
-} node_t;
-
-size_t print_list(node_t* head) {
-    node_t* current = head;
+ * print_listint - prints all the elements of a listint_t list
+ * @h: pointer to the head of the list
+ *
+ * Return: number of nodes in the list
+ */
+size_t print_listint(const listint_t *h)
+{
+    const listint_t *temp = h;
     size_t count = 0;
-    while (current != NULL) {
-        printf("%s\n", current->str);
+
+    while (temp != NULL)
+    {
+        printf("%d\n", temp->n);
         count++;
-        current = current->next;
-    }
-    return count;
-}
-
-int main() {
-    /* Create the list*/
-    node_t* head = malloc(sizeof(node_t));
-    head->str = strdup("hello");
-    node_t* second = malloc(sizeof(node_t));
-    second->str = strdup("world");
-    head->next = second;
-    second->next = NULL;
-
-    /* Print the list*/
-    size_t count = print_list(head);
-    printf("Number of nodes: %lu\n", count);
-
-    /* Free memory*/
-    node_t* current = head;
-    while (current != NULL) {
-        node_t* next = current->next;
-        free(current->str);
-        free(current);
-        current = next;
+        temp = temp->next;
     }
 
-    return 0;
+    return (count);
 }
