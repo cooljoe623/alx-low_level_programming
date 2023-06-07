@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /*
- * int _pow_recursion(int x, int y): finds the value of x raised to the power of y
+ *_pow_recursion(int x, int y): finds the value of x raised y
  *
  * @x: value of x (x^2)
  * @y: the power (1^y)
@@ -10,11 +10,11 @@
 int _pow_recursion(int x, int y)
 {
 	if (y < 0)
-		return(-1);
+		return (-1);
 	else if (y == 1)
-		return(x);
+		return (x);
 	else if (y == 0)
-		return(1);
+		return (1);
 
 	return (x * _pow_recursion(x, y - 1));
 }
