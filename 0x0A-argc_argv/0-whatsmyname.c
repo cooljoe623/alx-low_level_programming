@@ -1,16 +1,16 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-/*
- * main : the function
- * @argv: value
- * @argc: name
- *
- * return: (0)
+/**
+ * main - function
+ * @argc: offset count
+ * @argv: offset value
+ * Return: 0
  */
 
-int main(char *argv[], int argc)
+
+int main(int argc, char *argv[])
 {
-	printf("%s\n, argv[argc - 1]);
+	printf("%s\n", argv[argc - 1]);
 	return (0);
 }
+
