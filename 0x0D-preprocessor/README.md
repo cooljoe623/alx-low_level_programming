@@ -1,0 +1,1 @@
+macros is a name given to a piece of code so whenever the compiler encounters a macro in a program ti will replace it eith the macro value. here you'll find examples of various projects exaplaining what and how to use macros
