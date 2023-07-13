@@ -1,47 +1,37 @@
 #include "main.h"
-#include <stdio.io>
 
+/**
+ * binary_to_uint - converts a binary number to an
+ * unsigned int.
+ * @b: binary.
+ *
+ * Return: unsigned int.
+ */
+unsigned int binary_to_uint(const char *b)
+{
+	unsigned int ui;
+	int len, base_two;
 
+	if (!b)
+		return (0);
 
-int _putchar(char c);
+	ui = 0;
 
-unsigned int binary_to_uint(const char *b) {
-	    if (b == NULL)
-		            return 0;
+	for (len = 0; b[len] != '\0'; len++)
+		;
 
-	        unsigned int result = 0;
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	{
+		if (b[len] != '0' && b[len] != '1')
+		{
+			return (0);
+		}
 
-		    for (int i = 0; b[i] != '\0'; i++) {
-			            if (b[i] == '0' || b[i] == '1') {
-					                result = (result << 1) | (b[i] - '0');
-							        } else {
-									            return 0;
-										            }
-				        }
+		if (b[len] & 1)
+		{
+			ui += base_two;
+		}
+	}
 
-		        return result;
+	return (ui);
 }
-
-int main(void) {
-	    const char *binary = "101010";
-	        unsigned int result = binary_to_uint(binary);
-
-		    if (result == 0) {
-			            _putchar('0');
-				        } else {
-						        int digits[10];
-							        int num_digits = 0;
-								        while (result > 0) {
-										            digits[num_digits++] = result % 10;
-											                result /= 10;
-													        }
-									        for (int i = num_digits - 1; i >= 0; i--) {
-											            _putchar('0' + digits[i]);
-												            }
-										    }
-
-		        _putchar('\n');
-
-			    return 0;
-}
-
